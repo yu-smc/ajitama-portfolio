@@ -1,0 +1,45 @@
+{
+  "name": "drifting-stars",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "run-p dev:**",
+    "dev:clean": "rimraf ../../../public/works/niagara/**",
+    "dev:pug": "pug \"./src/pug/index.pug\" --out ../../../public/works/niagara/",
+    "dev:pugWatch": "pug \"./src/pug/index.pug\" --out ../../../public/works/niagara/ --watch",
+    "dev:scss": "node-sass ./src/scss/style.scss ../../../public/works/niagara/style.css",
+    "dev:scssWatch": "node-sass ./src/scss/style.scss ../../../public/works/niagara/style.css --watch",
+    "dev:js": "webpack",
+    "dev:watchjs": "onchange \"./src/js/**/*.js\" -- npm run dev:js",
+    "dev:copy": "cpx \"./src/statics/**\" ../../../public/works/niagara/statics",
+    "dev:browse": "browser-sync start --server \"../../../public/works/niagara\" --https true --watch --files \"../../../public/works/niagara/**\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yu-smc/drifting-stars.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yu-smc/drifting-stars/issues"
+  },
+  "homepage": "https://github.com/yu-smc/drifting-stars#readme",
+  "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "babel-loader": "^8.0.6",
+    "browser-sync": "^2.26.7",
+    "cpx": "^1.5.0",
+    "node-sass": "^4.13.1",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^6.1.0",
+    "pug": "^2.0.4",
+    "pug-cli": "^1.0.0-alpha6",
+    "rimraf": "^3.0.0",
+    "sass": "^1.25.0",
+    "three": "^0.112.1",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  }
+}
